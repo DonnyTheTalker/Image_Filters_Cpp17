@@ -2,7 +2,8 @@
 
 #include "filter.h"
 
-class CropFilter : public Filter {
+class CropFilter : public Filter
+{
 public:
     CropFilter(size_t width, size_t height);
     void Apply(Image& image) const override;

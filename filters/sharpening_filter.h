@@ -2,7 +2,8 @@
 
 #include "matrix_filter.h"
 
-class SharpeningFilter : public MatrixFilter {
+class SharpeningFilter : public MatrixFilter
+{
 public:
     SharpeningFilter();
 };

@@ -4,7 +4,8 @@
 #include <string>
 #include <vector>
 
-class Image {
+class Image
+{
 public:
     explicit Image(size_t width = 0, size_t height = 0);
     ~Image() = default;

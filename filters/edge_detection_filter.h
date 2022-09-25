@@ -2,7 +2,8 @@
 
 #include "matrix_filter.h"
 
-class EdgeDetectionFilter : public MatrixFilter {
+class EdgeDetectionFilter : public MatrixFilter
+{
 public:
     EdgeDetectionFilter(float threshold);
     void Apply(Image& image) const override;

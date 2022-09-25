@@ -2,7 +2,8 @@
 
 #include "../image.h"
 
-class Filter {
+class Filter
+{
 public:
     virtual void Apply(Image& image) const = 0;
     virtual ~Filter() = default;

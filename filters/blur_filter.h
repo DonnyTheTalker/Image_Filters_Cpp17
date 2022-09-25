@@ -2,7 +2,8 @@
 
 #include "filter.h"
 
-class BlurFilter : public Filter {
+class BlurFilter : public Filter
+{
 public:
     explicit BlurFilter(float sigma);
     void Apply(Image& image) const override;

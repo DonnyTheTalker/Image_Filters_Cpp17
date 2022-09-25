@@ -1,6 +1,7 @@
 #pragma once
 
-struct Color {
+struct Color
+{
     Color() = default;
     Color(float r, float g, float b);
     Color(const Color& other) = default;

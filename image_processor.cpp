@@ -8,7 +8,8 @@
 #include <exception>
 #include <iostream>
 
-void PrintHelpInfo() {
+void PrintHelpInfo()
+{
     std::cout << "Arguments format:" << std::endl;
     std::cout << "{program name} {input image path} {output image path}" << std::endl;
     std::cout << "[-{first filter name} [first parameter] [second parameter] ...]" << std::endl;
@@ -26,8 +27,10 @@ void PrintHelpInfo() {
     std::cout << "Gaussian blur (-blur sigma)" << std::endl;
 }
 
-int main(int argc, char **argv) {
-    if (argc == 1) {
+int main(int argc, char **argv)
+{
+    if (argc == 1)
+    {
         PrintHelpInfo();
         return 0;
     }
@@ -38,40 +41,51 @@ int main(int argc, char **argv) {
     std::string input_file_name;
     std::string output_file_name;
 
-    try {
+    try
+    {
         input_file_name = parser.GetArgument<std::string>();
         output_file_name = parser.GetArgument<std::string>();
-    } catch (const std::exception &ex) {
+    } catch (const std::exception &ex)
+    {
         std::cout << "Too few arguments given" << std::endl;
         return 0;
     }
 
-    try {
+    try
+    {
         BmpImporter::Import(image, input_file_name);
-    } catch (const std::exception &ex) {
+    } catch (const std::exception &ex)
+    {
         std::cout << ex.what() << std::endl;
         return 0;
     }
 
-    try {
+    try
+    {
         std::vector<std::unique_ptr<Filter>> filters;
         FiltersBuilder::Build(parser, filters);
-        try {
-            for (auto &filter : filters) {
+        try
+        {
+            for (auto &filter : filters)
+            {
                 filter->Apply(image);
             }
-        } catch (const std::exception &ex) {
+        } catch (const std::exception &ex)
+        {
             std::cout << "Error applying filters" << std::endl;
             return 0;
         }
 
-    } catch (std::exception &ex) {
+    } catch (std::exception &ex)
+    {
         std::cout << ex.what();
     }
 
-    try {
+    try
+    {
         BmpExporter::Export(image, output_file_name);
-    } catch (const std::exception &ex) {
+    } catch (const std::exception &ex)
+    {
         std::cout << ex.what() << std::endl;
     }
 }

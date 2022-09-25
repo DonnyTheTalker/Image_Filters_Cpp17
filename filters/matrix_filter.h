@@ -2,7 +2,8 @@
 
 #include "complex_filter.h"
 
-class MatrixFilter : public Filter {
+class MatrixFilter : public Filter
+{
 public:
     void Apply(Image& image) const override;
     Color CalculateWeightedSum(const Image& image, size_t x, size_t y) const;
