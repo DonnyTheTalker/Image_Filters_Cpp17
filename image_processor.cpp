@@ -11,7 +11,7 @@
 void PrintHelpInfo()
 {
     std::cout << "Arguments format:" << std::endl;
-    std::cout << "{program name} {input image path} {output image path}" << std::endl;
+    std::cout << "{input image path} {output image path}" << std::endl;
     std::cout << "[-{first filter name} [first parameter] [second parameter] ...]" << std::endl;
     std::cout << "[-{second filter name} [first parameter] [second parameter] ...]" << std::endl;
     std::cout << "Use as many filters as you want" << std::endl;
